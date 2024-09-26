@@ -1,11 +1,15 @@
 while True:
-    enemy = hero.findNearestEnemy()
-    distance = hero.distanceTo(enemy)
-    if distance < 10:
-        # Attack if they get too close to the peasant.
-        hero.attack(enemy)
-        pass
-    # Else, stay close to the peasant! Use else.
+    # Check the distance to the nearest enemy.
+    nearestEnemy = hero.findNearestEnemy()
+    distance = hero.distanceTo(nearestEnemy)
+    # If it comes closer than 10 meters, cleave it!
+    if (distance<5):
+        if hero.isReady("cleave"):
+            hero.cleave(nearestEnemy)
+        else:
+            hero.attack(nearestEnemy)
+    # Else, attack the "Chest" by name.
     else:
-        hero.moveXY(39, 39)        
+        hero.attack('Chest')
+
     

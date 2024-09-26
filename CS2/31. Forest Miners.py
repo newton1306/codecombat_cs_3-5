@@ -1,11 +1,26 @@
-while True:
-    enemy = hero.findNearestEnemy()
-    distance = hero.distanceTo(enemy)
-    if distance < 10:
-        # Attack if they get too close to the peasant.
-        hero.attack(enemy)
-        pass
-    # Else, stay close to the peasant! Use else.
+# Check if the mines are safe for the workers.
+
+def checkEnemyOrSafe(target):
+    # If `target` (the parameter) exists:
+    if target:
+        # Then attack target.
+        hero.attack(target)
+    # Otherwise:
     else:
-        hero.moveXY(39, 39)        
+        # Use say() to call the peasants.
+        hero.say('yahoo')
+    pass
+while True:
+    # Move to, and check the top right X mark.
+    hero.moveXY(64, 54)
+    enemy1 = hero.findNearestEnemy()
+    checkEnemyOrSafe(enemy1)
+    
+    # Move to the bottom left X mark.
+    hero.moveXY(16, 14)
+    # Save the result of findNearestEnemy() in a variable.
+    enemy2 = hero.findNearestEnemy();
+    # Call checkEnemyOrSafe, and pass the
+    checkEnemyOrSafe(enemy2)
+    # result of findNearestEnemy as the argument.
     

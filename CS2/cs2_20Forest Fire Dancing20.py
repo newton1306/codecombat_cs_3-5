@@ -1,11 +1,18 @@
+# In this level the evilstone is bad! Avoid them, walking the other direction.
 while True:
-    enemy = hero.findNearestEnemy()
-    distance = hero.distanceTo(enemy)
-    if distance < 10:
-        # Attack if they get too close to the peasant.
-        hero.attack(enemy)
-        pass
-    # Else, stay close to the peasant! Use else.
+    evilstone = hero.findNearestItem()
+    if evilstone:
+        pos = evilstone.pos
+        if pos.x == 34:     # == means "is equal to"
+            # If the evilstone is on the left, go to the right side.
+            hero.moveXY(46, hero.pos.y)
+            pass
+        else:
+            # If the evilstone is on the right, go to the left side.
+            hero.moveXY(34, hero.pos.y)
+            pass
     else:
-        hero.moveXY(39, 39)        
-    
+        # If there's no evilstone, go to the middle.
+        hero.moveXY(40, hero.pos.y)
+        pass
+

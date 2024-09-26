@@ -1,11 +1,16 @@
-while True:
+# This defines a function called findAndAttackEnemy
+def findAndAttackEnemy():
     enemy = hero.findNearestEnemy()
-    distance = hero.distanceTo(enemy)
-    if distance < 10:
-        # Attack if they get too close to the peasant.
+    if enemy:
         hero.attack(enemy)
-        pass
-    # Else, stay close to the peasant! Use else.
-    else:
-        hero.moveXY(39, 39)        
+
+# This code is not part of the function.
+while True:
+    # Now you can patrol the village using findAndAttackEnemy
+    hero.moveXY(35, 34)
+    findAndAttackEnemy()
     
+    # Now move to the right entrance.
+    hero.moveXY(60, 31)
+    # Use findAndAttackEnemy
+    findAndAttackEnemy()

@@ -1,13 +1,14 @@
-# Your cleave is on a 10 second cooldown.
-# Use an else-statement to defend yourself while recharging.
+# Munchkins are attacking!
+# The swarms will come at regular intervals.
+# Whenever you can, cleave to clear the mass of enemies.
 
 while True:
     enemy = hero.findNearestEnemy()
-    if hero.isReady("cleave"):
-        hero.cleave()
-    # Write else: to do something when "cleave" isn't ready:
+    # Use an if-statement with isReady to check "cleave":
+    if (enemy and hero.isReady('cleave')):
+        # Cleave!
+        hero.cleave(enemy)
+    # Else, if cleave is not ready:
     else:
-        # Be sure to attack the enemy:
-        if enemy:
-            hero.attack(enemy)
-        
+        # Attack the nearest ogre!
+        hero.attack(enemy)

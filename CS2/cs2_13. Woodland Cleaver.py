@@ -1,12 +1,14 @@
-# Stay in the middle and defend!
+# Use your new "cleave" skill as often as you can.
 
+hero.moveXY(23, 23)
 while True:
     enemy = hero.findNearestEnemy()
-    if enemy:
-        # Either attack the enemy...
-        hero.attack(enemy)
+    if hero.isReady("cleave"):
+        # Cleave the enemy!
+        hero.cleave(enemy)
+
         pass
     else:
-        # ... or move back to your defensive position.
-        hero.moveXY(40, 34)
+        # Else (if cleave isn't ready), do your normal attack.
+        hero.attack(enemy)
         pass

@@ -1,19 +1,26 @@
-# The hero is all confused!
-# Correct their path so they don't walk on the mines.
+# Navigate to red X marks, but be on the lookout!
+# These forest areas may contain ogres!
 
-hero.moveXY(11, 35)
-hero.moveXY(35, 25)
-hero.moveXY(40, 56)
-hero.moveXY(77, 58)
-# There is a headhunter in the area!
-# Move around the forest to avoid his line-of-sight.
+hero.moveXY(19, 33)
+enemy = hero.findNearestEnemy()
+# The if-statement will check if a variable has an ogre.
+if enemy:
+    hero.attack(enemy)
+    hero.attack(enemy)
 
-while True:
-    hero.moveXY(56,44)
-    hero.moveXY(40,56)
-    # Use moveXY to keep moving around the forest to survive.
-    # Don't forget about indents.
-    hero.moveXY(24,44)
-    hero.moveXY(24,24)
-    hero.moveXY(40,12)
-    hero.moveXY(56,24)
+hero.moveXY(49, 51)
+enemy = hero.findNearestEnemy()
+if enemy:
+    # Attack the enemy here:
+    hero.attack(enemy)
+    hero.attack(enemy)
+    # `pass` statement is a placeholder. It does nothing and helps close if-statements.
+    pass
+
+hero.moveXY(58, 14)
+enemy = hero.findNearestEnemy()
+# Use an if-statement to check if enemy exists:
+
+    # If enemy exists, attack it:
+    
+    

@@ -1,19 +1,27 @@
-# The hero is all confused!
-# Correct their path so they don't walk on the mines.
-
-hero.moveXY(11, 35)
-hero.moveXY(35, 25)
-hero.moveXY(40, 56)
-hero.moveXY(77, 58)
-# There is a headhunter in the area!
-# Move around the forest to avoid his line-of-sight.
+# Patrol the village entrances.
+# Build a "fire-trap" when you see an ogre.
+# Don't blow up any peasants!
 
 while True:
-    hero.moveXY(56,44)
-    hero.moveXY(40,56)
-    # Use moveXY to keep moving around the forest to survive.
-    # Don't forget about indents.
-    hero.moveXY(24,44)
-    hero.moveXY(24,24)
-    hero.moveXY(40,12)
-    hero.moveXY(56,24)
+    hero.moveXY(43, 50)
+    top = hero.findNearestEnemy()
+    if top:
+        hero.buildXY("fire-trap", 43, 50)
+    hero.moveXY(25, 34)
+    left = hero.findNearestEnemy()
+    # Check if `left` exists.
+    
+    if left:
+        # Build a trap at 25, 34 if the enemy exists.
+        hero.buildXY("fire-trap", 23, 34)
+        
+    hero.moveXY(43, 20)
+    # Set a variable for the bottom enemy.
+    
+    # Check if the bottom enemy exists.
+    
+        # Build a trap at 43, 20 if an enemy exists.
+    hero.moveXY(42, 22)
+    bottomEnemy = hero.findNearestEnemy()
+    if bottomEnemy:
+        hero.buildXY("fire-trap", 42, 22)

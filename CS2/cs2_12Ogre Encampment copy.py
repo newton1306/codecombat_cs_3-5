@@ -1,12 +1,12 @@
-# Stay in the middle and defend!
+# If there is an enemy, attack it.
+# Otherwise, attack the chest!
 
 while True:
+    # Use if/else.
     enemy = hero.findNearestEnemy()
     if enemy:
-        # Either attack the enemy...
         hero.attack(enemy)
-        pass
     else:
-        # ... or move back to your defensive position.
-        hero.moveXY(40, 34)
-        pass
+        hero.attack("Chest")
+    
+    
